@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إضافة كود | Codeera</title>
+    <link rel="stylesheet" href="assets/css/dashboard.css">
+</head>
+<body>
+    <h2>إضافة كود جديد</h2>
+    <form id="addCodeForm">
+        <input type="text" id="title" placeholder="اسم الكود" required>
+        <textarea id="code" placeholder="ضع الكود هنا" required></textarea>
+        <textarea id="description" placeholder="وصف الكود (اختياري)"></textarea>
+        <select id="tag">
+            <option value="html">HTML</option>
+            <option value="css">CSS</option>
+            <option value="js">JavaScript</option>
+            <option value="other">Other</option>
+        </select>
+        <input type="text" id="customTag" placeholder="أدخل لغة أخرى (إذا اخترت Other)">
+        <button type="submit">إضافة</button>
+    </form>
+
+    <script src="assets/js/addCode.js"></script>
+</body>
+</html>
