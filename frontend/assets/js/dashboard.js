@@ -1,12 +1,16 @@
 // dashboard.js
 async function loadCodes() {
     const token = localStorage.getItem("token");
+    if (!token) {
+        alert("الرجاء تسجيل الدخول أولاً");
+        window.location.href = "login.html";
+        return;
+    }
 
     try {
         const res = await fetch("http://localhost:5000/api/codes", {
             headers: { "Authorization": `Bearer ${token}` }
         });
-
         const data = await res.json();
 
         if (res.ok) {

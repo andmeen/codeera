@@ -4,15 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>الملف الشخصي | Codeera</title>
+    <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/dashboard.css">
+    <link rel="icon" href="assets/img/icon-transperant.png">
 </head>
 <body>
-    <h2>الملف الشخصي</h2>
-    <p><strong>اسم المستخدم:</strong> <span id="username"></span></p>
-    <p><strong>البريد الإلكتروني:</strong> <span id="email"></span></p>
-    <p><strong>تاريخ الانضمام:</strong> <span id="joinedAt"></span></p>
-
-    <button id="logoutBtn">تسجيل خروج</button>
+    <main class="page">
+        <h2 class="page-title">الملف الشخصي</h2>
+        <section class="card detail-card">
+            <p><strong>الاسم:</strong> <span id="displayName"></span></p>
+            <p><strong>اسم المستخدم:</strong> <span id="username"></span></p>
+            <p><strong>البريد الإلكتروني:</strong> <span id="email"></span></p>
+            <p><strong>تاريخ الانضمام:</strong> <span id="joinedAt"></span></p>
+            <div class="actions" style="margin-top:12px;">
+                <button id="logoutBtn" class="btn-ghost">تسجيل خروج</button>
+                <button class="btn-ghost"><a href="dashboard.html">ارجع</a></button>
+            </div>
+        </section>
+    </main>
 
     <script src="assets/js/main.js"></script>
     <script src="assets/js/profile.js"></script>

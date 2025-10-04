@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Codeera | مستودع الأكواد</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="manifest" href="/manifest.webmanifest">
+    <meta name="theme-color" content="#674bf7">
 </head>
 <body>
     <header>
         <nav>
-            <img src="assets/img/logo.png" alt="Codeera Logo" class="logo">
-            <ul>
+            <!-- <img src="assets/img/logo.png" alt="Codeera Logo" class="logo"> -->
+            <ul style="display: flex; list-style: none; margin: -5px; padding: 3px 5px;">
                 <li><a href="index.html">الرئيسية</a></li>
                 <li><a href="login.html">تسجيل الدخول</a></li>
                 <li><a href="register.html">إنشاء حساب</a></li>
@@ -31,5 +33,20 @@
     <footer>
         <p>جميع الحقوق محفوظة &copy; 2025 - Codeera</p>
     </footer>
+
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js').catch(console.error);
+        });
+      }
+      // Prompt install handling (optional)
+      let deferredPrompt;
+      window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        deferredPrompt = e;
+        // You can show a custom install button and trigger: deferredPrompt.prompt();
+      });
+    </script>
 </body>
 </html>

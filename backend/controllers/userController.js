@@ -3,7 +3,7 @@ const db = require('../models/db');
 
 const me = async (req, res) => {
   try {
-    const [rows] = await db.query('SELECT id, name, email, created_at FROM users WHERE id = ?', [req.userId]);
+    const [rows] = await db.query('SELECT id, name, username, email, created_at FROM users WHERE id = ?', [req.userId]);
     if (!rows.length) return res.status(404).json({ message: 'Not found' });
     res.json({ user: rows[0] });
   } catch (err) {

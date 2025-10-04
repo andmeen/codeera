@@ -4,23 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>إضافة كود | Codeera</title>
+    <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/dashboard.css">
+    <link rel="icon" href="assets/img/icon-transperant.png">
 </head>
 <body>
-    <h2>إضافة كود جديد</h2>
-    <form id="addCodeForm">
-        <input type="text" id="title" placeholder="اسم الكود" required>
-        <textarea id="code" placeholder="ضع الكود هنا" required></textarea>
-        <textarea id="description" placeholder="وصف الكود (اختياري)"></textarea>
-        <select id="tag">
-            <option value="html">HTML</option>
-            <option value="css">CSS</option>
-            <option value="js">JavaScript</option>
-            <option value="other">Other</option>
-        </select>
-        <input type="text" id="customTag" placeholder="أدخل لغة أخرى (إذا اخترت Other)">
-        <button type="submit">إضافة</button>
-    </form>
+    <main class="page">
+        <h2 class="page-title">إضافة كود جديد</h2>
+        <form id="addCodeForm" class="card form-card">
+            <div class="form-row">
+                <label for="title">اسم الكود</label>
+                <input type="text" id="title" placeholder="مثال: دالة تنسيق التاريخ" required>
+            </div>
+            <div class="form-row">
+                <label for="code">نص الكود</label>
+                <textarea id="code" placeholder="ضع الكود هنا" required></textarea>
+            </div>
+            <div class="form-row">
+                <label for="description">وصف (اختياري)</label>
+                <textarea id="description" placeholder="وصف قصير يوضح استخدام الكود"></textarea>
+            </div>
+            <div class="form-row">
+                <label for="tag">اللغة / الوسم</label>
+                <select id="tag">
+                    <option value="html">HTML</option>
+                    <option value="css">CSS</option>
+                    <option value="js">JavaScript</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="form-row">
+                <label for="customTag">وسم مخصص (إذا اخترت Other)</label>
+                <input type="text" id="customTag" placeholder="مثال: Python">
+            </div>
+            <div class="actions">
+                <button type="submit" class="btn-primary">إضافة</button>
+                <button type="button" class="btn-ghost" onclick="window.history.back()">رجوع</button>
+            </div>
+        </form>
+    </main>
 
     <script src="assets/js/addCode.js"></script>
 </body>

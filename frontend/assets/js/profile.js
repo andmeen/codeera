@@ -17,10 +17,13 @@ async function loadProfile() {
 
         if (res.ok && payload && payload.user) {
             const u = payload.user;
-            const nameEl = document.getElementById("username");
+            const displayNameEl = document.getElementById("displayName");
+            const usernameEl = document.getElementById("username");
             const emailEl = document.getElementById("email");
             const joinedEl = document.getElementById("joinedAt");
-            if (nameEl) nameEl.innerText = u.name || "-";
+
+            if (displayNameEl) displayNameEl.innerText = u.name || u.email || "-";
+            if (usernameEl) usernameEl.innerText = u.username || "-";
             if (emailEl) emailEl.innerText = u.email || "-";
             if (joinedEl) joinedEl.innerText = u.created_at ? new Date(u.created_at).toLocaleDateString() : "-";
         } else {
