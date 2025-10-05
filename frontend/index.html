@@ -12,12 +12,12 @@
     <header>
         <nav>
             <!-- <img src="assets/img/logo.png" alt="Codeera Logo" class="logo"> -->
-            <ul style="display: flex; list-style: none; margin: -5px; padding: 3px 5px;">
+            <ul style="display: flex; list-style: none; margin: -5px; padding: 3px 5px; gap: 10px;">
                 <li><a href="index.html">الرئيسية</a></li>
-                <li><a href="login.html">تسجيل الدخول</a></li>
-                <li><a href="register.html">إنشاء حساب</a></li>
+                <li><a id="loginLink" href="login.html">تسجيل الدخول</a></li>
+                <li><a id="registerLink" href="register.html">إنشاء حساب</a></li>
                 <li><a href="dashboard.html">المستودع</a></li>
-                <li><a href="profile.html">بروفايل</a></li>
+                <li><a id="profileLink" href="profile.html" style="display:none;">بروفايل</a></li>
             </ul>
         </nav>
     </header>
@@ -26,7 +26,7 @@
         <section class="hero">
             <h1>مرحبا بك في <span>Codeera</span></h1>
             <p>منصة لحفظ وإدارة أكوادك بسهولة.</p>
-            <a href="register.html" class="btn">ابدأ الآن</a>
+            <a id="heroCta" href="register.html" class="btn">ابدأ الآن</a>
         </section>
     </main>
 
@@ -34,6 +34,7 @@
         <p>جميع الحقوق محفوظة &copy; 2025 - Codeera</p>
     </footer>
 
+    <script src="assets/js/main.js"></script>
     <script>
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {

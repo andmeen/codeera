@@ -42,7 +42,7 @@ header #logoutBtn { background: var(--primary-200); color: var(--text); }
 
 .codes-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 18px;
   padding: 20px;
   max-width: 1120px;
@@ -53,25 +53,47 @@ header #logoutBtn { background: var(--primary-200); color: var(--text); }
   background: var(--bg);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 16px;
+  padding: 16px 16px 14px;
   box-shadow: var(--shadow);
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 12px;
+  transition: transform .12s ease, box-shadow .2s ease;
 }
-.code-card h3 { margin: 0; font-size: 18px; }
-.code-card p { margin: 0; color: #495061; min-height: 40px; }
-.code-card .tag { display: inline-block; background: var(--primary-200); color: var(--text); padding: 6px 10px; border-radius: 999px; font-size: 12px; }
-.code-card button {
-  margin-top: 8px;
-  background: var(--primary);
-  color: #fff;
-  border: none;
-  padding: 8px 12px;
-  border-radius: 10px;
-  cursor: pointer;
+.code-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 34px rgba(103,75,247,.18);
 }
-.code-card button + button { background: var(--primary-200); color: var(--text); margin-left: 8px; }
+.code-card .card-header { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.code-card .header-left { display: flex; align-items: center; gap: 12px; min-width: 0; }
+.code-card .avatar-sm {
+  width: 36px; height: 36px; border-radius: 999px; display: grid; place-items: center; font-weight: 700; color: #fff;
+  background: linear-gradient(135deg, var(--primary) 0%, #8b81ff 100%);
+  box-shadow: 0 6px 16px rgba(103,75,247,.25);
+  flex: 0 0 auto;
+}
+.code-card .titles { min-width: 0; }
+.code-card .card-title {
+  margin: 0; font-size: 18px; font-weight: 700; color: var(--text);
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.code-card .chip { display: inline-flex; align-items: center; gap: 6px; background: var(--primary-200); color: var(--text); padding: 4px 10px; border-radius: 999px; font-size: 12px; }
+.code-card .chip-dot { width: 8px; height: 8px; border-radius: 999px; background: var(--primary); }
+.code-card .card-sub { margin-top: 2px; color: #6b6f82; font-size: 12px; display: flex; gap: 8px; flex-wrap: wrap; }
+.code-card .card-desc {
+  margin: 0; color: #495061;
+  display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+  line-clamp: 3;
+  min-height: 48px;
+}
+.code-card .card-meta { color: #6b6f82; font-size: 12px; }
+.code-card .card-actions { display: flex; gap: 10px; flex-wrap: nowrap; }
+.code-card .card-actions.three .btn-sm { flex: 1; }
+.code-card .btn-sm { padding: 10px 12px; border-radius: 10px; border: none; cursor: pointer; font-weight: 600; letter-spacing: .2px; }
+.code-card .btn-primary { background: var(--primary); color: #fff; }
+.code-card .btn-ghost { background: #f1f0fe; color: var(--text); }
+.code-card .btn-ghost.danger { background: #ffeef0; color: #b11a2b; }
+.code-card .btn-sm:hover { filter: brightness(0.98); transform: translateY(-1px); }
 
 @media (max-width: 640px) {
   header { padding: 12px; }

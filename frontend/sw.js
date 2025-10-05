@@ -1,4 +1,4 @@
-const CACHE_NAME = 'codeera-v1';
+const CACHE_NAME = 'codeera-v3';
 const PRECACHE_URLS = [
   '/',
   '/index.html',
@@ -28,6 +28,18 @@ self.addEventListener('fetch', (event) => {
   const { request } = event;
   // Only handle GET
   if (request.method !== 'GET') return;
+
+  try {
+    const url = new URL(request.url);
+    const isSameOrigin = url.origin === self.location.origin;
+    // Always bypass cache for API requests to avoid stale data
+    if (isSameOrigin && url.pathname.startsWith('/api/')) {
+      event.respondWith(fetch(request));
+      return;
+    }
+  } catch (_) {
+    // If URL parsing fails, fall back to default strategy below
+  }
 
   // Network-first for same-origin HTML, cache-first for others
   if (request.headers.get('accept')?.includes('text/html')) {
