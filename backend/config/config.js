@@ -1,13 +1,21 @@
 const mysql = require("mysql2");
 
-const db = mysql.createConnection({
-  host: process.env.DB_HOST || "localhost",
-  user: process.env.DB_USER || "root",
-  password: process.env.DB_PASS || "Afm123@",
-  database: process.env.DB_NAME || "codeera_db"
+// const db = mysql.createConnection({
+//   host: process.env.DB_HOST || "localhost",
+//   user: process.env.DB_USER || "root",
+//   password: process.env.DB_PASS || "Afm123@",
+//   database: process.env.DB_NAME || "codeera_db"
+// });
+
+const connection = mysql.createConnection({
+  host: 'mysql.railway.internal',
+  user: 'root',
+  password: 'wqAypgXCNiJQIgWnnfzxfzKWnTNQQrpY',
+  database: 'railway',
+  port: 3306
 });
 
-db.connect((err) => {
+connection.connect((err) => {
   if (err) {
     console.error("❌ Error connecting to MySQL:", err);
     return;
@@ -15,4 +23,4 @@ db.connect((err) => {
   console.log("✅ Connected to MySQL");
 });
 
-module.exports = db;
+module.exports = connection;
