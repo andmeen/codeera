@@ -8,11 +8,11 @@ const mysql = require("mysql2");
 // });
 
 const connection = mysql.createConnection({
-  host: 'mysql.railway.internal',
+  host: 'ballast.proxy.rlwy.net',
   user: 'root',
-  password: 'wqAypgXCNiJQIgWnnfzxfzKWnTNQQrpY',
-  database: 'railway',
-  port: 3306
+  password: 'MNwICssIYtfGXdGJGWciMBARyHAwlyyX',
+  database: 'codeera_db',
+  port: 10694
 });
 
 connection.connect((err) => {
