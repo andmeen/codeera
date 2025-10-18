@@ -1,53 +1,489 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Codeera | مستودع الأكواد</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <meta name="description" content="كودييرا - منصة إدارة وتنظيم المقتطفات البرمجية بسهولة وأمان">
+    <link rel="stylesheet" href="assets/css/landing.css">
+    <link rel="icon" href="assets/img/icon-transperant.png">
     <link rel="manifest" href="/manifest.webmanifest">
-    <meta name="theme-color" content="#674bf7">
+    <meta name="theme-color" content="#4338ca">
+    <title>كودييرا | Codeera - منصة إدارة المقتطفات البرمجية</title>
 </head>
 <body>
-    <header>
-        <nav>
-            <!-- <img src="assets/img/logo.png" alt="Codeera Logo" class="logo"> -->
-            <ul style="display: flex; list-style: none; margin: -5px; padding: 3px 5px; gap: 10px;">
-                <li><a href="index.html">الرئيسية</a></li>
-                <li><a id="loginLink" href="login.html">تسجيل الدخول</a></li>
-                <li><a id="registerLink" href="register.html">إنشاء حساب</a></li>
-                <li><a href="dashboard.html">المستودع</a></li>
-                <li><a id="profileLink" href="profile.html" style="display:none;">بروفايل</a></li>
-            </ul>
-        </nav>
-    </header>
+    <!-- Animated Background -->
+    <div class="animated-bg">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
 
-    <main class="landing">
-        <section class="hero">
-            <h1>مرحبا بك في <span>Codeera</span></h1>
-            <p>منصة لحفظ وإدارة أكوادك بسهولة.</p>
-            <a id="heroCta" href="register.html" class="btn">ابدأ الآن</a>
-        </section>
-    </main>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+          <div class="logo">
+            <img src="assets/img/icon-transperant.png" alt="Codeera Logo" width="40" height="40" />
+            <span>Codeera</span>
+          </div>
+          <ul class="nav-links" id="navLinks">
+            <li><a href="#hero" class="nav-link">الرئيسية</a></li>
+            <li><a href="#about" class="nav-link">حول</a></li>
+            <li><a href="#features" class="nav-link">المميزات</a></li>
+            <li><a href="#how" class="nav-link">كيف يعمل</a></li>
+            <li><a href="login.html" class="signin-btn" id="authBtn"><span>سجل دخولك</span></a></li>
+          </ul>
+          <button class="hamburger" id="hamburger" aria-label="القائمة">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </nav>
 
-    <footer>
-        <p>جميع الحقوق محفوظة &copy; 2025 - Codeera</p>
-    </footer>
+      <!-- Hero Section -->
+      <section id="hero" class="hero-section">
+        <div class="hero-gradient"></div>
+        <div class="hero-container">
+          <div class="hero-content">
+            <!-- <div class="hero-badge">✨ منصة إدارة الأكواد الأولى عربياً</div> -->
+            <h1 class="hero-title">
+              خلّ أكوادك معك<br>
+              <span class="gradient-text">وين ما كنت</span>
+            </h1>
+            <p class="hero-subtitle">
+              منصّة تساعدك تخزّن أكوادك البرمجية بشكل مرتب وسهل، وتلقى كل اللي تبيه بثواني. 
+              رتّب، شارك، وابنِ مكتبتك الخاصة اللي تمشي معك وين ما تروح.
+            </p>
+            <div class="hero-buttons">
+              <a href="register.html" class="btn btn-primary">
+                <span>ابدأ الآن مجاناً</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </a>
+              <a href="#features" class="btn btn-secondary">
+                <span>شوف المميزات</span>
+              </a>
+            </div>
+            <div class="hero-stats">
+              <div class="stat-item">
+                <span class="stat-number">سريع</span>
+                <span class="stat-label">الأداء</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">آمن</span>
+                <span class="stat-label">التشفير</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">سهل</span>
+                <span class="stat-label">الاستخدام</span>
+              </div>
+            </div>
+          </div>
+          <div class="hero-visual">
+            <div class="code-window">
+              <div class="window-header">
+                <div class="window-dots">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+                <span class="window-title">snippet.js</span>
+              </div>
+              <div class="window-content">
+                <code class="code-line"><span class="code-keyword">function</span> <span class="code-function">saveSnippet</span>() {</code>
+                <code class="code-line">  <span class="code-keyword">const</span> code = <span class="code-string">"أكوادك محفوظة"</span>;</code>
+                <code class="code-line">  <span class="code-keyword">return</span> <span class="code-function">organize</span>(code);</code>
+                <code class="code-line">}</code>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="hero-scroll">
+          <a href="#about" aria-label="scroll down">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
+          </a>
+        </div>
+      </section>
+      
+      <!-- About Section -->
+      <section id="about" class="about-section">
+        <div class="container">
+          <header class="about-header">
+            <span class="section-badge">عن المنصة</span>
+            <h2 class="about-title">لماذا <span class="gradient-text">كودييرا</span>؟</h2>
+            <p class="about-subtitle">منصّة سهلة وسريعة لحفظ وتنظيم أكوادك البرمجية، بأمان وسلاسة، وتقدر توصل لها بأي وقت ومن أي مكان.</p>
+          </header>
 
-    <script src="assets/js/main.js"></script>
-    <script>
-      if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
-          navigator.serviceWorker.register('/sw.js').catch(console.error);
+          <div class="about-grid">
+            <div class="about-card fade-in">
+              <div class="about-icon-wrapper">
+                <div class="about-icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15.2 3a2 2 0 0 1 1.4.6l3.8 3.8a2 2 0 0 1 .6 1.4V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/><path d="M17 21v-7a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v7"/><path d="M7 3v4a1 1 0 0 0 1 1h7"/></svg>
+                </div>
+              </div>
+              <div class="about-content">
+                <h3>حفظ الأكواد</h3>
+                <p>احفظ شفراتك مع الوصف والوسوم، ورتّبها للوصول السريع متى احتجتها.</p>
+              </div>
+            </div>
+            <div class="about-card fade-in">
+              <div class="about-icon-wrapper">
+                <div class="about-icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+                </div>
+              </div>
+              <div class="about-content">
+                <h3>بحث فوري</h3>
+                <p>ابحث بالكلمات الرئيسية أو الوسوم، ووصل للكود المطلوب خلال ثوانٍ.</p>
+              </div>
+            </div>
+            <div class="about-card fade-in">
+              <div class="about-icon-wrapper">
+                <div class="about-icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+                </div>
+              </div>
+              <div class="about-content">
+                <h3>خصوصية وأمان</h3>
+                <p>حسابك محمي والتحكّم بالمشاركة بيدك—خاصة أو عامة حسب رغبتك.</p>
+              </div>
+            </div>
+            <div class="about-card fade-in">
+              <div class="about-icon-wrapper">
+                <div class="about-icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M7 16c.5-2 1.5-7 4-7 2 0 2 3 4 3 2.5 0 4.5-5 5-7"/></svg>
+                </div>
+              </div>
+              <div class="about-content">
+                <h3>تجربة سلسة</h3>
+                <p>واجهة حديثة وخفيفة تساعدك تركز على بناء مشاريعك بدون تعقيد.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features Section -->
+      <section id="features" class="features-section">
+        <div class="container">
+          <header class="features-header">
+            <span class="section-badge">المميزات</span>
+            <h2 class="features-title">قوة <span class="gradient-text">كودييرا</span> في متناول يدك</h2>
+            <p class="features-subtitle">كل اللي تحتاجه لإدارة مقتطفاتك بسرعة وبساطة—من دون ما تضيع وقتك في البحث وسط الملفات.</p>
+          </header>
+
+          <div class="features-grid">
+            <div class="feature-card">
+              <div class="feature-icon-bg"></div>
+              <div class="feature-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12h6"/><path d="M12 9v6"/><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z"/></svg>
+              </div>
+              <h3>إضافة سريعة</h3>
+              <p>أضف أي كود مع عنوان ووصف ووسم بلحظات—بدون خطوات معقدة.</p>
+            </div>
+
+            <div class="feature-card">
+              <div class="feature-icon-bg"></div>
+              <div class="feature-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 8 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 8a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 8 4.6a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 15 8.6c0 .57.22 1.12.63 1.53.41.41.96.63 1.53.63H18a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+              </div>
+              <h3>وسوم ذكية</h3>
+              <p>نظّم الأكواد بوسوم مرنة، وخلك دايم تقدر توصل للي تحتاجه.</p>
+            </div>
+
+            <div class="feature-card">
+              <div class="feature-icon-bg"></div>
+              <div class="feature-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 21l-4.35-4.35"/><circle cx="11" cy="11" r="8"/></svg>
+              </div>
+              <h3>بحث متقدم</h3>
+              <p>دور بالعنوان أو الوسم أو الكلمات، وبتلقى النتيجة مباشرة.</p>
+            </div>
+
+            <div class="feature-card">
+              <div class="feature-icon-bg"></div>
+              <div class="feature-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+              </div>
+              <h3>عرض مريح</h3>
+              <p>واجهة مرتبة لعرض الكود والوصف والوسم بوضوح بدون تشتيت.</p>
+            </div>
+
+            <div class="feature-card">
+              <div class="feature-icon-bg"></div>
+              <div class="feature-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <h3>أمان الحساب</h3>
+              <p>نحافظ على بياناتك باستخدام نظام تسجيل دخول آمن ورموز JWT.</p>
+            </div>
+
+            <div class="feature-card">
+              <div class="feature-icon-bg"></div>
+              <div class="feature-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 7-7 7 7"/><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"/></svg>
+              </div>
+              <h3>كل شي بمكانه</h3>
+              <p>كل الأكواد محفوظة ومنظمة—ترجع لها بأي وقت ومن أي جهاز.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- How It Works Section -->
+      <section id="how" class="how-section">
+        <div class="container">
+          <header class="how-header">
+            <span class="section-badge">كيف تبدأ</span>
+            <h2 class="how-title">شلون تشتغل <span class="gradient-text">المنصّة</span>؟</h2>
+            <p class="how-subtitle">أربع خطوات بسيطة وتكون كل أكوادك مرتّبة وتلقاها بسرعة.</p>
+          </header>
+          <div class="steps-container">
+            <div class="steps-grid">
+              <div class="step-card">
+                <div class="step-number">
+                  <span>1</span>
+                  <div class="step-connector"></div>
+                </div>
+                <div class="step-content">
+                  <h3>سجّل حساب</h3>
+                  <p>أنشئ حساب جديد خلال ثواني عشان تبدأ تجمع أكوادك في مكان واحد.</p>
+                </div>
+              </div>
+              <div class="step-card">
+                <div class="step-number">
+                  <span>2</span>
+                  <div class="step-connector"></div>
+                </div>
+                <div class="step-content">
+                  <h3>أضف مقتطف</h3>
+                  <p>اكتب العنوان والوصف، الصق الكود، واختر الوسم المناسب.</p>
+                </div>
+              </div>
+              <div class="step-card">
+                <div class="step-number">
+                  <span>3</span>
+                  <div class="step-connector"></div>
+                </div>
+                <div class="step-content">
+                  <h3>نظّم بالوسوم</h3>
+                  <p>رتّب مقتطفاتك بوسوم ذكية عشان يكون الوصول لها أسرع.</p>
+                </div>
+              </div>
+              <div class="step-card">
+                <div class="step-number">
+                  <span>4</span>
+                </div>
+                <div class="step-content">
+                  <h3>ابحث ولقِ</h3>
+                  <p>استخدم البحث بالكلمات أو الوسوم وبتلقى الكود المطلوب فورًا.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="cta-section">
+        <div class="cta-container">
+          <div class="cta-content">
+            <h2 class="cta-title">جاهز تبدأ؟</h2>
+            <p class="cta-subtitle">انضم الآن واحفظ أكوادك بطريقة احترافية ومنظمة</p>
+            <div class="cta-buttons">
+              <a href="register.html" class="btn btn-cta">
+                <span>ابدأ مجاناً</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="site-footer">
+        <div class="footer-container">
+          <div class="footer-grid">
+            <div class="footer-brand">
+              <img src="assets/img/icon-transperant.png" alt="Codeera Logo" width="40" height="40">
+              <div class="brand-info">
+                <strong>Codeera</strong>
+                <span>منصّة إدارة المقتطفات البرمجية</span>
+              </div>
+            </div>
+            <nav class="footer-links">
+              <h4>روابط سريعة</h4>
+              <a href="#about">حول</a>
+              <a href="#features">المميزات</a>
+              <a href="#how">كيف يعمل</a>
+            </nav>
+            <nav class="footer-links">
+              <h4>الحساب</h4>
+              <a href="login.html">تسجيل الدخول</a>
+              <a href="register.html">إنشاء حساب</a>
+              <a href="dashboard.html">لوحة التحكم</a>
+            </nav>
+            <div class="footer-social">
+              <h4>تواصل معنا</h4>
+              <div class="social-icons">
+                <a href="#" aria-label="Twitter" title="Twitter">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+                </a>
+                <a href="#" aria-label="GitHub" title="GitHub">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 0 5 0 5 0c-.3 1.15-.3 2.35 0 3.5-.73 1.02-1.08 2.25-1 3.5 0 3.5 3 5.5 6 5.5A4.8 4.8 0 0 0 9 18v4"/></svg>
+                </a>
+                <a href="#" aria-label="LinkedIn" title="LinkedIn">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="footer-bottom">
+            <p>© <span id="year"></span> Codeera. جميع الحقوق محفوظة.</p>
+          </div>
+        </div>
+      </footer>
+
+<script>
+// Service Worker Registration
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js').catch(console.error);
+  });
+}
+
+// PWA Install Prompt
+let deferredPrompt;
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+});
+
+// Mobile Menu Toggle
+const hamburger = document.getElementById("hamburger");
+const navLinks = document.getElementById("navLinks");
+
+if (hamburger) {
+  hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    navLinks.classList.toggle("open");
+    document.body.classList.toggle("menu-open");
+  });
+}
+
+// Close mobile menu when clicking outside
+document.addEventListener("click", (e) => {
+  if (!e.target.closest(".navbar") && navLinks.classList.contains("open")) {
+    hamburger.classList.remove("active");
+    navLinks.classList.remove("open");
+    document.body.classList.remove("menu-open");
+  }
+});
+
+// Smooth Scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    const href = this.getAttribute('href');
+    if (href !== '#' && href !== '') {
+      e.preventDefault();
+      const target = document.querySelector(href);
+      if (target) {
+        // Close mobile menu if open
+        if (navLinks.classList.contains("open")) {
+          hamburger.classList.remove("active");
+          navLinks.classList.remove("open");
+          document.body.classList.remove("menu-open");
+        }
+        
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
         });
       }
-      // Prompt install handling (optional)
-      let deferredPrompt;
-      window.addEventListener('beforeinstallprompt', (e) => {
-        e.preventDefault();
-        deferredPrompt = e;
-        // You can show a custom install button and trigger: deferredPrompt.prompt();
-      });
-    </script>
+    }
+  });
+});
+
+// Navbar scroll effect
+let lastScroll = 0;
+const navbar = document.querySelector('.navbar');
+
+window.addEventListener('scroll', () => {
+  const currentScroll = window.pageYOffset;
+  
+  if (currentScroll <= 0) {
+    navbar.classList.remove('scroll-up');
+    navbar.classList.remove('scrolled');
+    return;
+  }
+  
+  if (currentScroll > lastScroll && !navbar.classList.contains('scroll-down')) {
+    navbar.classList.remove('scroll-up');
+    navbar.classList.add('scroll-down');
+  } else if (currentScroll < lastScroll && navbar.classList.contains('scroll-down')) {
+    navbar.classList.remove('scroll-down');
+    navbar.classList.add('scroll-up');
+  }
+  
+  if (currentScroll > 100) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
+  
+  lastScroll = currentScroll;
+});
+
+// Intersection Observer for fade-in animations
+const observerOptions = {
+  threshold: 0.1,
+  rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, observerOptions);
+
+// Observe all cards and sections
+document.querySelectorAll('.about-card, .feature-card, .step-card').forEach(el => {
+  observer.observe(el);
+});
+
+// Year in footer
+const yearEl = document.getElementById("year");
+if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+// Check if user is logged in and update auth button
+const authBtn = document.getElementById("authBtn");
+if (authBtn) {
+  const token = localStorage.getItem("token");
+  if (token) {
+    const span = authBtn.querySelector('span');
+    if (span) {
+      span.textContent = "المستودع";
+    } else {
+      authBtn.innerHTML = "<span>المستودع</span>";
+    }
+    authBtn.href = "dashboard.html";
+  }
+}
+
+// Code window typing animation
+const codeLines = document.querySelectorAll('.code-line');
+if (codeLines.length > 0) {
+  codeLines.forEach((line, index) => {
+    setTimeout(() => {
+      line.style.opacity = '1';
+      line.style.transform = 'translateX(0)';
+    }, 1000 + (index * 200));
+  });
+}
+</script>
 </body>
 </html>
